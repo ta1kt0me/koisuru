@@ -25,6 +25,6 @@ class RandomResponder < Responder
   end
 
   def response(input)
-    @respondses[rand @responses.size]
+    @responses[rand @responses.size]
   end
 end
