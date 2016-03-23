@@ -1,6 +1,8 @@
 require 'responder'
 
 class Unmo
+  attr_accessor :name, :responder
+
   def initialize(name)
     @name = name
     @responder = RandomResponder.new('What')
@@ -12,9 +14,5 @@ class Unmo
 
   def responder_name
     @responder.name
-  end
-
-  def name
-    @name
   end
 end
