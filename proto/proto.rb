@@ -1,35 +1,4 @@
-class Responder
-  def initialize(name)
-    @name = name
-  end
-
-  def response(input)
-    "#{input}って何？"
-  end
-
-  def name
-    @name
-  end
-end
-
-class Unmo
-  def initialize(name)
-    @name = name
-    @responder = Responder.new('What')
-  end
-
-  def dialogue(input)
-    @responder.response(input)
-  end
-
-  def responder_name
-    @responder.name
-  end
-
-  def name
-    @name
-  end
-end
+require 'unmo'
 
 def prompt(unmo)
   unmo.name + ';' + unmo.responder_name + '> '
