@@ -1,4 +1,4 @@
-require 'unmo'
+require './unmo'
 
 def prompt(unmo)
   unmo.name + ';' + unmo.responder_name + '> '

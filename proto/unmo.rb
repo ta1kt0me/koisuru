@@ -1,4 +1,4 @@
-require 'responder'
+require './responder'
 
 class Unmo
   attr_accessor :name, :responder
