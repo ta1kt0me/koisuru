@@ -3,7 +3,7 @@ require 'responder'
 class Unmo
   def initialize(name)
     @name = name
-    @responder = Responder.new('What')
+    @responder = RandomResponder.new('What')
   end
 
   def dialogue(input)
