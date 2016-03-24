@@ -9,5 +9,14 @@
     We are using node <script>document.write(process.versions.node)</script>,
     Chromium <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
+    <div id="root"></div>
+    <script>
+      window.onload = function() {
+        require("babel-core/register")({
+          "presets": ["es2015", "react"]
+        })
+        require("./components/main.js")
+      }
+    </script>
   </body>
 </html>
