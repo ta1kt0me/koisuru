@@ -1,5 +1,9 @@
 class WebProto
+  extend Forwardable
+
   attr_accessor :proto, :input
+
+  def_delegators :@proto, :name, :responder_name
 
   def initialize(input)
     @proto = Unmo.new 'proto'
@@ -7,6 +11,6 @@ class WebProto
   end
 
   def reply
-    @proto.name + ': ' + @proto.responder_name + '> ' + @proto.dialogue(input)
+    @proto.dialogue(input)
   end
 end

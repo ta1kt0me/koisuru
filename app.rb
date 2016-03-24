@@ -4,6 +4,11 @@ class App < Sinatra::Base
   end
 
   get '/answer' do
-    WebProto.new('hoge').reply
+    proto = WebProto.new('hoge')
+    {
+      name: proto.name,
+      responder: proto.responder_name,
+      answer: proto.reply
+    }.to_json
   end
 end
