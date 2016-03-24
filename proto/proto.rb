@@ -1,3 +1,4 @@
+require './responder'
 require './unmo'
 
 def prompt(unmo)

@@ -1,5 +1,3 @@
-require './responder'
-
 class Unmo
   attr_accessor :name, :responder, :resp_what, :resp_random
 
