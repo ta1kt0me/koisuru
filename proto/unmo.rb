@@ -11,7 +11,7 @@ class Unmo
   end
 
   def dialogue(input)
-    @responder = rand 2 == 0 ? @resp_what : @resp_random
+    @responder = rand(2) == 0 ? @resp_what : @resp_random
     @responder.response(input)
   end
 
