@@ -5,7 +5,7 @@ class Unmo
 
   def initialize(name)
     @name = name
-    @resp_what = WhatResponder.newa('What')
+    @resp_what = WhatResponder.new('What')
     @resp_random = RandomResponder.new('Random')
     @responder = @resp_random
   end
