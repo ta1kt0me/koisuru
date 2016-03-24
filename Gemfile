@@ -5,6 +5,6 @@ gem 'sinatra'
 gem 'puma'
 
 group :development do
-  gem 'sinatra-contrib'
+  gem 'shotgun'
   gem 'byebug'
 end

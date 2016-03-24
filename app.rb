@@ -1,15 +1,9 @@
-require 'sinatra'
-if development?
-  require 'sinatra/reloader'
-  require 'byebug'
-end
-
 class App < Sinatra::Base
-  configure :development do
-    register Sinatra::Reloader
+  get '/' do
+    'this is sample app1'
   end
-end
 
-get '/' do
-  'this is sample app1'
+  get '/answer' do
+    WebProto.new('hoge').reply
+  end
 end
