@@ -18,7 +18,9 @@ export class Root extends React.Component {
     }).then(function(json){
       ReactDOM.findDOMNode(this.refs.message).value = ''
       this.setState({
-        messages: this.state.messages.concat(json.name + ':' + json.responder + '> ' + json.answer)
+        messages: this.state.messages.concat({body: json.name + ':' + json.responder + '> ' + json.answer, created_at: json.created_at}).sort(function(a,b){
+          return (a.created_at > b.created_at) ? -1 : 1
+        })
       })
     }.bind(this))
   }
@@ -34,7 +36,7 @@ export class Root extends React.Component {
         <ul>
         {
           this.state.messages.map(function(message) {
-            return <li>{message}</li>
+            return <li>{message.body}</li>
           })
         }
         </ul>
