@@ -8,7 +8,7 @@ class App < Sinatra::Base
     {
       name: proto.name,
       responder: proto.responder_name,
-      answer: proto.reply
+      answer: proto.reply(params["input"])
     }.to_json
   end
 end

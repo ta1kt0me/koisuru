@@ -12,7 +12,7 @@ export class Root extends React.Component {
     e.preventDefault()
     var input = ReactDOM.findDOMNode(this.refs.message).value
 
-    fetch('http://localhost:9393/answer')
+    fetch('http://localhost:9393/answer?input=' + encodeURIComponent(input))
     .then(function(response){
       return response.json()
     }).then(function(json){

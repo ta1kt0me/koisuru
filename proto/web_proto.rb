@@ -10,7 +10,7 @@ class WebProto
     @input = input
   end
 
-  def reply
+  def reply(input)
     @proto.dialogue(input)
   end
 end
