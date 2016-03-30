@@ -36,7 +36,7 @@ export class Root extends React.Component {
         <ul>
         {
           this.state.messages.map(function(message) {
-            return <li>{message.body}</li>
+            return <li key={message.created_at}>{message.body}</li>
           })
         }
         </ul>
