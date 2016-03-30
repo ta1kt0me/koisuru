@@ -39,7 +39,7 @@ export class Root extends React.Component {
           </div>
           <input type="submit" value="Post" className="btn btn-default" />
         </form>
-        <ul className="padding-bottom-5 list-unstyled">
+        <ul className="list-unstyled">
         {
           this.state.messages.map(function(message) {
             return (
