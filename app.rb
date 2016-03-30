@@ -6,10 +6,22 @@ class App < Sinatra::Base
   get '/answer' do
     proto = WebProto.new('hoge')
     {
-      name: proto.name,
-      responder: proto.responder_name,
-      answer: proto.reply(params["input"]),
-      created_at: Time.now
+      question: {
+        input: params['input'],
+        created_at: unique
+      },
+      answer: {
+        name: proto.name,
+        responder: proto.responder_name,
+        reply: proto.reply(params['input']),
+        created_at: unique
+      }
     }.to_json
+  end
+
+  private
+
+  def unique
+    Time.now.to_i.to_s + Time.now.nsec.to_s
   end
 end

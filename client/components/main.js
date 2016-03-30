@@ -18,11 +18,18 @@ export class Root extends React.Component {
     }).then(function(json){
       ReactDOM.findDOMNode(this.refs.message).value = ''
       this.setState({
-        messages: this.state.messages.concat({
-          user: json.name + ': ' + json.responder,
-          body: json.answer,
-          created_at: json.created_at
-        }).sort(function(a,b){
+        messages: this.state.messages.concat(
+                      {
+                        user: (json.answer.name + ': ' + json.answer.responder),
+                        body: json.answer.reply,
+                        created_at: json.answer.created_at
+                      },
+                      {
+                        user: "自分",
+                        body: json.question.input,
+                        created_at: json.question.created_at
+                      }
+        ).sort(function(a,b){
           return (a.created_at > b.created_at) ? -1 : 1
         })
       })
