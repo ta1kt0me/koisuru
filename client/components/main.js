@@ -18,7 +18,11 @@ export class Root extends React.Component {
     }).then(function(json){
       ReactDOM.findDOMNode(this.refs.message).value = ''
       this.setState({
-        messages: this.state.messages.concat({body: json.name + ':' + json.responder + '> ' + json.answer, created_at: json.created_at}).sort(function(a,b){
+        messages: this.state.messages.concat({
+          user: json.name + ': ' + json.responder,
+          body: json.answer,
+          created_at: json.created_at
+        }).sort(function(a,b){
           return (a.created_at > b.created_at) ? -1 : 1
         })
       })
@@ -30,13 +34,19 @@ export class Root extends React.Component {
       <div>
         <h1>Message</h1>
         <form className="messageForm" onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="message..." ref="message" />
-          <input type="submit" value="Post" />
+          <div className="form-group">
+            <input type="text" placeholder="message..." ref="message" className="form-control" />
+          </div>
+          <input type="submit" value="Post" className="btn btn-default" />
         </form>
-        <ul>
+        <ul className="padding-bottom-5 list-unstyled">
         {
           this.state.messages.map(function(message) {
-            return <li key={message.created_at}>{message.body}</li>
+            return (
+              <li key={message.created_at} className="alert alert-info" role="alert">
+                <span className='text-muted small'>{message.user}</span>: <span>{message.body}</span>
+              </li>
+            )
           })
         }
         </ul>
