@@ -1,30 +1,13 @@
-# electron-quick-start
+# koisuru client
 
-**Clone and run for a quick way to see an Electron in action.**
+[恋するプログラム―Rubyでつくる人工無脳](http://www.amazon.co.jp/%E6%81%8B%E3%81%99%E3%82%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E2%80%95Ruby%E3%81%A7%E3%81%A4%E3%81%8F%E3%82%8B%E4%BA%BA%E5%B7%A5%E7%84%A1%E8%84%B3-%E7%A7%8B%E5%B1%B1-%E6%99%BA%E4%BF%8A/dp/4839917299) 's client application.
 
-This is a minimal Electron application based on the [Quick Start Guide](http://electron.atom.io/docs/latest/tutorial/quick-start) within the Electron documentation.
+## Usage
 
-A basic Electron application needs just these files:
+Before starting this, you need to start up server application.
 
-- `index.html` - A web page to render.
-- `main.js` - Starts the app and creates a browser window to render HTML.
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-
-You can learn more about each of these components within the [Quick Start Guide](http://electron.atom.io/docs/latest/tutorial/quick-start).
-
-## To Use
-
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-git clone https://github.com/atom/electron-quick-start
-# Go into the repository
-cd electron-quick-start
-# Install dependencies and run the app
+```
 npm install && npm start
 ```
-
-Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/latest).
 
 #### License [CC0 (Public Domain)](LICENSE.md)
